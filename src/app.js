@@ -2,14 +2,17 @@ require('dotenv').config()
 const express = require('express')
 const path = require('path')
 const hbs = require('hbs')
+const helmet = require('helmet')
 
-//Oublic directory path
+//Public directory path
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
 const app = express()
+app.use(helmet())
 
+//Set the view engine and related paths
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
@@ -23,9 +26,8 @@ app.get('', (req,res) => {
     })
 })
 
+//Set the port and start app listening
 const port = process.env.PORT
-
-console.log(port)
 
 app.listen(port, () => {
 	console.log('Server is listening on ' + port)
