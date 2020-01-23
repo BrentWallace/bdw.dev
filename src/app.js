@@ -23,6 +23,8 @@ app.use(express.static(publicDirectoryPath))
 //Routes
 app.get('', (req,res) => {
     res.render('index', {
+      title: "BDW.dev",
+      description: "Full stack developer based in Raleigh, NC"
     })
 })
 
