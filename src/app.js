@@ -5,6 +5,7 @@ const hbs = require('hbs');
 const helmet = require('helmet');
 const { check, validationResult } = require('express-validator');
 const sgMail = require('@sendgrid/mail');
+const request = require('request');
 
 // Public directory path
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -40,22 +41,30 @@ app.post('/contact_handler/', [
   // Check for errors and return any that come up
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    return res.status(422).json({ errors: errors.array() });
+    return res.status(422).send('Something went wrong.');
   }
-  // Construct the email
-  const fromEmail = req.body.inputEmail;
-  const message = req.body.inputMessage;
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  const msg = {
-    to: 'brent@bdw.dev',
-    from: fromEmail,
-    subject: `Contact form submission from ${fromEmail}`,
-    text: `Plain text message: ${message}`,
-    html: `<strong>The following is a message that was recieved from the contact form on BDW.dev.</strong><br />${message}`,
-  };
-  sgMail.send(msg);
-  // Send a response to the form on the front end
-  return res.send('Thank you for reaching out! I\'ll get back to you as soon as I can.');
+
+  // Verify the recaptcha token
+  const { inputEmail, inputMessage, recaptcha } = req.body;
+  const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_V3_SECRET_KEY;
+
+  const verified = request(`https://www.google.com/recaptcha/api/siteverify?secret=${RECAPTCHA_SECRET_KEY}&response=${recaptcha}`, (error, response, body) => (body.success));
+
+  if (verified) {
+    // Construct the email
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const msg = {
+      to: 'brent@bdw.dev',
+      from: inputEmail,
+      subject: `Contact form submission from ${inputEmail}`,
+      text: `Plain text message: ${inputMessage}`,
+      html: `<strong>The following is a message that was recieved from the contact form on BDW.dev.</strong><br />${inputMessage}`,
+    };
+    sgMail.send(msg);
+    // Send a response to the form on the front end
+    return res.send('Thank you for reaching out! I\'ll get back to you as soon as I can.');
+  }
+  return res.send('Something went wrong.');
 });
 
 // Set the port and start app listening

@@ -7,7 +7,8 @@
   <meta description="{{description}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
   <style>
@@ -15,12 +16,18 @@
       scroll-behavior: smooth;
     }
 
-    h1, h2, h3, h4, h5, h6, .display-1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .display-1 {
       font-family: 'Source Code Pro', monospace;
     }
 
     p {
-      font-size:1.2rem;
+      font-size: 1.2rem;
     }
 
     .anchor {
@@ -38,7 +45,8 @@
       <p class="display-4 mt-4">I am a full-stack developer <br /> based in Raleigh, NC.</p>
       <hr class="my-4">
       <h2>Let me help you build your next project!</h2>
-      <a class="btn btn-info btn-lg" href="#" role="button" data-toggle="modal" data-target="#contactModal">Contact Me</a>
+      <a class="btn btn-info btn-lg" href="#" role="button" data-toggle="modal" data-target="#contactModal">Contact
+        Me</a>
     </div>
   </div>
   <div class="container-fluid bg-dark text-light">
@@ -51,7 +59,8 @@
             </h1>
           </a>
           <p class="pb-4 mb-4">
-            That phrase has been responsible for an enormous variety of opportunities and experiences, and now I've made a career out of being the guy people call when they have a problem they don't know how to solve.
+            That phrase has been responsible for an enormous variety of opportunities and experiences, and now I've made
+            a career out of being the guy people call when they have a problem they don't know how to solve.
           </p>
         </div>
       </div>
@@ -74,7 +83,8 @@
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Dungeons &amp; Dragons 5e Character Builder</h5>
-              <p class="card-text">A tool I put together for some friends to help them build new characters for their D&amp;D games</p>
+              <p class="card-text">A tool I put together for some friends to help them build new characters for their
+                D&amp;D games</p>
               <a href="#" class="btn btn-info">View this Project</a>
             </div>
           </div>
@@ -94,7 +104,8 @@
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Carefield Living</h5>
-              <p class="card-text">Company website for Carefield Living, a brand of senior assisted living and memory care communities.</p>
+              <p class="card-text">Company website for Carefield Living, a brand of senior assisted living and memory
+                care communities.</p>
               <a href="#" class="btn btn-info">View this Project</a>
             </div>
           </div>
@@ -114,7 +125,8 @@
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
               <a href="#" class="btn btn-info">Go somewhere</a>
             </div>
           </div>
@@ -124,7 +136,8 @@
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
               <a href="#" class="btn btn-info">Go somewhere</a>
             </div>
           </div>
@@ -138,20 +151,22 @@
     </button>
   </div>
   <!--modal content-->
-  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="contactModalLabel">Contact Me</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
         <div class="modal-body">
           <p>
             Let me know how I can help you!
           </p>
           <form action="/contact_handler/" method="POST">
+            <input type="hidden" id="g-recaptcha-token" name="recaptcha" value="" />
             <div class="form-group">
               <label for="inputEmail">Email address</label>
               <input type="email" class="form-control" name="inputEmail" id="inputEmail" aria-describedby="emailHelp">
@@ -162,7 +177,7 @@
               <textarea type="" class="form-control" name="inputMessage" id="inputMessage" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-info" id="contactSubmit">Send</button>
-            <p id="message"></p>
+            <p class="mt-4" id="response"></p>
           </form>
         </div>
       </div>
@@ -170,29 +185,44 @@
   </div>
   <!--scripts-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdpvdMUAAAAAHX6OW7sI30uZwmvWRovv8pwjPid"></script>
+  <script>
+    grecaptcha.ready(function () {
+      grecaptcha.execute('6LdpvdMUAAAAAHX6OW7sI30uZwmvWRovv8pwjPid', { action: 'contact' }).then(function (token) {
+        document.getElementById('g-recaptcha-token').value=token;
+    });
+});
+  </script>
+
   <script type="text/javascript">
-    $(document).ready(function() {
-      $('#contactSubmit').click(function() {
+    $(document).ready(function () {
+      $('#contactSubmit').click(function () {
         event.preventDefault();
         var inputEmail = $('#inputEmail').val();
         var inputMessage = $('#inputMessage').val();
+        var recaptcha = $('#g-recaptcha-token').val();
         var request = $.ajax({
           method: 'POST',
           url: '/contact_handler',
           data: {
             inputEmail: inputEmail,
             inputMessage: inputMessage,
+            recaptcha: recaptcha,
           },
-          
+
         });
-        request.done(function(msg) {
-          $('#message').html(msg);
+        request.done(function (msg) {
+          $('#response').html(msg);
         });
 
-        request.fail(function(jqXHR, textStatus) {
-          $('#message').html('Request Failed: ' + textStatus);
+        request.fail(function (jqXHR, textStatus) {
+          $('#response').html('Request Failed: ' + textStatus);
         })
       });
     });
