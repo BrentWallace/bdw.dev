@@ -51,7 +51,7 @@ app.post('/contact_handler/', [
     from: fromEmail,
     subject: `Contact form submission from ${fromEmail}`,
     text: `Plain text message: ${message}`,
-    html: `<p>The following is a message that was recieved from the contact form on BDW.dev.</p>${message}`,
+    html: `<strong>The following is a message that was recieved from the contact form on BDW.dev.</strong><br />${message}`,
   };
   sgMail.send(msg);
   // Send a response to the form on the front end

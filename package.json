@@ -20,7 +20,8 @@
     "express-validator": "^6.3.1",
     "hbs": "^4.1.0",
     "helmet": "^3.21.2",
-    "pm2": "^4.2.3"
+    "pm2": "^4.2.3",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
