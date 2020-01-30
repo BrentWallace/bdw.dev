@@ -9,6 +9,7 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 
   <style>
@@ -18,10 +19,11 @@
 
     .display-1 {
       font-family: 'Source Code Pro', monospace;
-      font-size:6vw;
+      font-size: 6vw;
     }
+
     .display-4 {
-      font-size:4vw;
+      font-size: 4vw;
     }
 
     p {
@@ -29,16 +31,21 @@
     }
 
     .anchor {
-      margin-top: -3rem;
-      padding-top: 3rem;
+      margin-top: -4rem;
+      padding-top: 4rem;
+    }
+
+    .animated {
+      animation-duration: 2s;
     }
 
     @media screen and (max-width:601px) {
       .display-1 {
-        font-size:10vw;
+        font-size: 10vw;
       }
+
       .display-4 {
-        font-size:8vw;
+        font-size: 8vw;
       }
     }
   </style>
@@ -48,11 +55,13 @@
   {{>nav}}
   <div class="jumbotron jumbotron-fluid mt-4 bg-info text-white text-center" style="height:100vh;margin-bottom:0rem;">
     <div class="container">
-      <h1 class="display-1 my-4 py-4">&lt;Hello, world!&gt;</h1>
-      <p class="display-4 my-4 py-4">I am a full-stack developer <br /> based in Raleigh, NC.</p>
-      <hr class="my-4 border-white">
-      <h2 class="my-4 py-4">Let me help you build your next project!</h2>
-      <a class="btn btn-light btn-lg " href="#" role="button" data-toggle="modal" data-target="#contactModal">Contact
+      <h1 class="display-1 my-4 py-4" data-aos="fade" data-aos-easing="ease-in">&lt;Hello, world!&gt;</h1>
+      <p class="display-4 my-4 py-4" data-aos="fade" data-aos-easing="ease-in" data-aos-delay="1000">I am a full-stack developer <br /> based in Raleigh, NC.
+      </p>
+      <hr class="my-4 border-white" data-aos="fade" data-aos-easing="ease-in" data-aos-delay="1500">
+      <h2 class="my-4 py-4" data-aos="fade" data-aos-easing="ease-in" data-aos-delay="2000">Let me help you build your next project!</h2>
+      <a class="btn btn-light btn-lg" data-aos="fade" data-aos-easing="ease-in" data-aos-delay="2000" href="#" role="button" data-toggle="modal"
+        data-target="#contactModal">Contact
         Me</a>
     </div>
   </div>
@@ -61,11 +70,11 @@
       <div class="row">
         <div class="col-lg">
           <a name="about" class="anchor">
-            <h1 class="text-center display-4 pt-4 pb-4 mt-4 mb-4">
+            <h1 id="test" data-aos="fade" data-aos-easing="ease-in" class="text-center display-4 pt-4 pb-4 mt-4 mb-4">
               "I don't know. Brent can figure it out."
             </h1>
           </a>
-          <p class="pb-4 mb-4">
+          <p class="pb-4 mb-4" data-aos="fade" data-aos-easing="ease-in">
             That phrase has been responsible for an enormous variety of opportunities and experiences, and now I've made
             a career out of being the guy people call when they have a problem they don't know how to solve.
           </p>
@@ -78,7 +87,7 @@
       <div class="row">
         <div class="col-lg">
           <a name="projects" class="anchor">
-            <h1 class="text-center text-light display-4 pb-4 mb-4">
+            <h1 class="text-center text-light display-4 pb-4 mb-4" data-aos="fade" data-aos-easing="ease-in">
               Projects
             </h1>
           </a>
@@ -86,7 +95,7 @@
       </div>
       <div class="row text-dark">
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card" data-aos="fade" data-aos-easing="ease-in">
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Dungeons &amp; Dragons 5e Character Builder</h5>
@@ -97,7 +106,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card" data-aos="fade" data-aos-easing="ease-in">
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">California RCFE Finder</h5>
@@ -107,7 +116,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card" data-aos="fade" data-aos-easing="ease-in">
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Carefield Living</h5>
@@ -118,7 +127,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card" data-aos="fade" data-aos-easing="ease-in">
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">MotoQuest</h5>
@@ -128,7 +137,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card" data-aos="fade" data-aos-easing="ease-in">
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -139,7 +148,7 @@
           </div>
         </div>
         <div class="col-md-6 mb-4">
-          <div class="card">
+          <div class="card" data-aos="fade" data-aos-easing="ease-in">
             <img src="http://placehold.it/300x200" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
@@ -202,19 +211,28 @@
   <script>
     grecaptcha.ready(function () {
       grecaptcha.execute('6LdpvdMUAAAAAHX6OW7sI30uZwmvWRovv8pwjPid', { action: 'contact' }).then(function (token) {
-        document.getElementById('g-recaptcha-token').value=token;
+        document.getElementById('g-recaptcha-token').value = token;
+      });
     });
-});
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
   <script type="text/javascript">
     $(document).ready(function () {
-      $('.nav-item').click(function() {
-        $('.nav-item').each(function() {
+      // Nav active item
+      $('.nav-item').click(function () {
+        $('.nav-item').each(function () {
           $(this).removeClass('active');
         });
         $(this).toggleClass('active');
       });
-      
+
+      // Animate test
+
+
+      // Contact form
       $('#contactSubmit').click(function () {
         event.preventDefault();
         var inputEmail = $('#inputEmail').val();
