@@ -39,13 +39,13 @@
 
 <body>
   {{>nav}}
-  <div class="jumbotron jumbotron-fluid mt-4" style="margin-bottom:0rem;">
+  <div class="jumbotron jumbotron-fluid mt-4 bg-info text-white text-center" style="height:100vh;margin-bottom:0rem;">
     <div class="container">
-      <h1 class="display-1">&lt;Hello, world!&gt;</h1>
-      <p class="display-4 mt-4">I am a full-stack developer <br /> based in Raleigh, NC.</p>
-      <hr class="my-4">
-      <h2>Let me help you build your next project!</h2>
-      <a class="btn btn-info btn-lg" href="#" role="button" data-toggle="modal" data-target="#contactModal">Contact
+      <h1 class="display-1 my-4 py-4">&lt;Hello, world!&gt;</h1>
+      <p class="display-4 my-4 py-4">I am a full-stack developer <br /> based in Raleigh, NC.</p>
+      <hr class="my-4 border-white">
+      <h2 class="my-4 py-4">Let me help you build your next project!</h2>
+      <a class="btn btn-light btn-lg " href="#" role="button" data-toggle="modal" data-target="#contactModal">Contact
         Me</a>
     </div>
   </div>
@@ -177,7 +177,7 @@
               <textarea type="" class="form-control" name="inputMessage" id="inputMessage" rows="3"></textarea>
             </div>
             <button type="submit" class="btn btn-info" id="contactSubmit">Send</button>
-            <p class="mt-4" id="response"></p>
+            <p class="mt-4 alert-success" id="response"></p>
           </form>
         </div>
       </div>
@@ -199,9 +199,15 @@
     });
 });
   </script>
-
   <script type="text/javascript">
     $(document).ready(function () {
+      $('.nav-item').click(function() {
+        $('.nav-item').each(function() {
+          $(this).removeClass('active');
+        });
+        $(this).toggleClass('active');
+      });
+      
       $('#contactSubmit').click(function () {
         event.preventDefault();
         var inputEmail = $('#inputEmail').val();
@@ -218,11 +224,11 @@
 
         });
         request.done(function (msg) {
-          $('#response').html(msg);
+          $('#response').removeClass('alert-danger p-4').addClass('alert-success p-4').html(msg);
         });
 
         request.fail(function (jqXHR, textStatus) {
-          $('#response').html('Request Failed: ' + textStatus);
+          $('#response').removeClass('alert-success p-4').addClass('alert-danger p-4').html('Request Failed: ' + textStatus);
         })
       });
     });
