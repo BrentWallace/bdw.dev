@@ -8,7 +8,7 @@
     "stop": "pm2 stop all",
     "list": "pm2 list",
     "reload": "pm2 reload app",
-    "dev": "nodemon src/app.js",
+    "dev": "nodemon -e js,json,hbs src/app.js",
     "monitor": "pm2 monit"
   },
   "keywords": [],
