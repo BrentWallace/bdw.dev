@@ -21,9 +21,13 @@
     h3,
     h4,
     h5,
-    h6,
+    h6 {
+      font-family: 'Source Code Pro', monospace;
+    }
+
     .display-1 {
       font-family: 'Source Code Pro', monospace;
+      font-size:6vw;
     }
 
     p {
@@ -33,6 +37,12 @@
     .anchor {
       margin-top: -3rem;
       padding-top: 3rem;
+    }
+
+    @media screen and (max-width:601px) {
+      .display-1 {
+        font-size:4vw;
+      }
     }
   </style>
 </head>
